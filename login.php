@@ -3,13 +3,6 @@
 <link rel="stylesheet" href="assets/style/login.css">
 <div class="main">
     <p class="sign" align="center">Sign in</p>
-    <?php if(isset($_GET['err'])): ?>
-        <center>
-    <div class="err" role="alert">
-        <?= $_GET['err'] ?>
-    </div>
-    </center>
-    <?php endif ?>
     <form class="form1" action="login-post.php" method="POST">
         <a class="bt"><button class="btn1" type=""><i class="fas fa-user"></i></button>
             <input class="un " type="text" placeholder="Username" name="user"> </a>

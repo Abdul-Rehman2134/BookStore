@@ -1,8 +1,5 @@
 <?Php include "assets/data/connection.php";
 session_start();
-if(empty(!$_SESSION['user'])){
-    header("Location: login.php?err=Please login and continue");
-}
 if (isset($_SESSION['cartItems']) && !empty($_SESSION['cartItems'])) {
     $total_items = $_POST['total_items'];
     $total_price = $_POST['total_price'];
