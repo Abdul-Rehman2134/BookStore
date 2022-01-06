@@ -26,7 +26,7 @@ $database->close();
             <td><?= $order['quantity'] ?></td>
             <td align="center"><?= $order['total_amount'] ?></td>
             <td align="right"><?= $order['date'] ?></td>
-            <td align="right"><a href="order_items.php?id=<?= $order['id'] ?>" class="order_detail">Deatil</a></td>
+            <td align="right"><a href="order_items.php?id=<?= $order['id'] ?>" class="order_detail">Detail</a></td>
         </tr>
         <?php endforeach ?>
     </table>
