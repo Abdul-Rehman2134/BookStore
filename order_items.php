@@ -4,7 +4,6 @@ FROM order_items oi
 JOIN books b ON oi.book_id = b.id
 JOIN categories c ON c.id = b.category_id
 WHERE oi.order_id ={$_GET['id']}";
-// echo $query;exit;
 $database = new Database();
 $ordersItems = $database->query($query);
 $database->close();

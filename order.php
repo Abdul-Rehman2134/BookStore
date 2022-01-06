@@ -1,6 +1,5 @@
 <?php include "header.php";
 $query = "SELECT * FROM orders WHERE user_id = {$_SESSION['user']['id']}";
-// echo $query;exit;
 $database = new Database();
 $orders = $database->query($query);
 $database->close();
@@ -16,7 +15,6 @@ $database->close();
     <table class="tblCart_items">
         <tr class="tr">
             <th>#</th>
-            <th>User Id</th>
             <th>Items</th>
             <th>Total Amount</th>
             <th>Date</th>
@@ -25,7 +23,6 @@ $database->close();
         <?php foreach($orders as $index => $order): ?>
         <tr class="trd">
             <td><?= $index + 1 ?></td>
-            <td><?= $order['user_id'] ?></td>
             <td><?= $order['quantity'] ?></td>
             <td align="center"><?= $order['total_amount'] ?></td>
             <td align="right"><?= $order['date'] ?></td>
