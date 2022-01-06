@@ -11,7 +11,7 @@
   <table class="tblCart_items">
     <tr class="tr">
       <th>#</th>
-      <th>Item</th>
+      <th style="width:200px;">Item</th>
       <th>Category</th>
       <th>Quantity</th>
       <th>Unit price</th>
@@ -36,11 +36,11 @@ if (!isset($_SESSION['cartItems']) || empty($_SESSION['cartItems'])) {
         ?>
 	    <tr class="trd">
 	      <td><?=$index + 1?></td>
-	      <td><?=$item['name']?></td>
-	      <td><?=$item['author']?></td>
-	      <td><?=$item['qty']?></td>
-	      <td><?=$item['price']?></td>
-	      <td><?=$item['qty'] * $item['price']?></td>
+	      <td style="width:200px;"><?=$item['name']?></td>
+	      <td align="center"><?=$item['author']?></td>
+	      <td align="center"><?=$item['qty']?></td>
+	      <td align="center"><?=$item['price']?></td>
+	      <td align="right"><?=$item['qty'] * $item['price']?></td>
 	      <td>
 	        <form action="removecartItem.php" method="POST">
 	          <input type="hidden" name="id" value="<?=$index?>">
@@ -58,7 +58,9 @@ if (!isset($_SESSION['cartItems']) || empty($_SESSION['cartItems'])) {
         <form action="order-post.php" method="POST">
           <input type="hidden" name="total_items" value="<?=$total_quantity?>">
           <input type="hidden" name="total_price" value="<?=$total_price?>">
-          <button class="submit success" type="submit" <?=empty($_SESSION['cartItems']) ? 'disabled' : ''?>>Order Now</button>
+       <?php if (!empty($_SESSION['user'])) {?>
+    <button class="submit success" type="submit" <?=empty($_SESSION['cartItems']) ? 'disabled' : ''?>>Order Now</button>
+  <?php } ?>
         </form>
       </th>
     </tr>

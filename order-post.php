@@ -1,4 +1,7 @@
 <?Php include "assets/data/connection.php";
+if (empty($_SESSION['user'])) {
+    header('Location:login.php');
+  }
 session_start();
 if (isset($_SESSION['cartItems']) && !empty($_SESSION['cartItems'])) {
     $total_items = $_POST['total_items'];

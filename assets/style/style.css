@@ -43,7 +43,8 @@
       font-size: 0.99em;
   }
   
-  .main-nav a:hover {
+  .main-nav a:hover,
+  .order_detail:hover {
       color: #04aa6d;
   }
   
