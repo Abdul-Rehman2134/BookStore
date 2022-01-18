@@ -1,14 +1,15 @@
 <?Php include "assets/data/connection.php";
-if (empty($_SESSION['user'])) {
-    header('Location:login.php');
-  }
+// if (empty($_SESSION['user'])) {
+//     header('Location:login.php');
+//   }
 session_start();
 if (isset($_SESSION['cartItems']) && !empty($_SESSION['cartItems'])) {
-    $total_items = $_POST['total_items'];
+   $total_items = count($_SESSION['cartItems']);
     $total_price = $_POST['total_price'];
     $user_id = $_SESSION['user']['id'];
     $date = date('Y-m-d');
-    $query = "INSERT INTO orders ( user_id , total_amount , quantity, `date`) VALUES( $user_id, $total_price, $total_items, '$date')";
+    $query = "INSERT INTO orders ( user_id , total_amount , quantity, `date`) VALUES( $user_id, $total_price,
+     $total_items, '$date')";
     $database = new Database();
     $database->insert($query);
     $orderId = $database->getLastId();

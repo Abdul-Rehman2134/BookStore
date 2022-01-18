@@ -25,7 +25,7 @@ if (!isset($_SESSION['cartItems']) || empty($_SESSION['cartItems'])) {
     ?>
     <tr class="trdEmpty">
       <td>
-      <p><?='Your shopping cart is empty.';?></p>
+      <p><b><i>Your shopping cart is empty.please go back and purchase any books. Thanks:)</i></b></p>
       </td>
     </tr>
     <?php } else {
@@ -35,7 +35,7 @@ if (!isset($_SESSION['cartItems']) || empty($_SESSION['cartItems'])) {
         $total_price += $item['qty'] * $item['price'];
         ?>
 	    <tr class="trd">
-	      <td><?=$index + 1?></td>
+      <td style="color: red;"><b><?= $index + 1 ?></b></td>
 	      <td style="width:200px;"><?=$item['name']?></td>
 	      <td align="center"><?=$item['author']?></td>
 	      <td align="center"><?=$item['qty']?></td>

@@ -29,7 +29,7 @@ $database->close();
         <?php foreach($ordersItems as $index => $items): ?>
         <tr class="trd">
             <td><?= $index + 1?></td>
-            <td><img style="height: 60px;position: relative; right:20px;" src="<?= $items['image']?>" alt="image"></td>
+            <td><img style="height: 60px;position: relative; right:20px;" src="assets/image/<?= $items['image']?>" alt="image"></td>
             <td style="position: relative; right:15px;"><?= $items['name']?></td>
             <td align="left"><?= $items['category_name']?></td>
             <td align="center"><?= $items['qty']?></td>
