@@ -1,4 +1,7 @@
-<?php include ("data/connection.php");?>
+<?php include ("data/connection.php");
+session_start();
+?>
+
 
 <!DOCTYPE html>
 
@@ -21,6 +24,7 @@
         <h1 class="logo"><a class="text-dark">Admin Panel<i style="color:#04aa6d;" class="fa fa-opencart"
                     aria-hidden="true"></i></a></h1>
         <ul class="main-nav">
+            <li><a href="../index.php" title="back"><i class="fas fa-arrow-circle-left"></i></a></li>
             <li><a href="index.php">Books</a></li>
             <li><a href="categories.php">Categories</a></li>
             <li><a href="authors.php">Authors</a></li>
