@@ -16,13 +16,14 @@ $database->close();
      <?php foreach ($books as $book) {
     ?>
         <div class="items">
-            <img width="100%" src="<?=$book['image']?>" alt="">
+            <img width="100%" src="assets/image/<?=$book['image']?>" alt="">
         </div>
         <div class="items">
             <h1><?=$book['name']?></h1>
 
-            <h3>Author: <?=$book['author']?></h3>
-            <h3>$<?=$book['price']?></h3>
+            <p><b>Author :</b> <?=$book['author']?></p>
+            <p><b>Category :</b><?=$book['category']?></p>
+            <p><b>Price :</b> Rs. <?=$book['price']?></p>
 
             <h3>Description</h3>
             <p><?=$book['desc']?></p>

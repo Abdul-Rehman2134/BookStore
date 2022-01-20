@@ -17,8 +17,7 @@ if (isset($_SESSION['cartItems']) && !empty($_SESSION['cartItems'])) {
     <link rel="stylesheet" type="" href="assets/style/cart.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
 </head>
 
 <body>
@@ -45,6 +44,9 @@ if (empty($_SESSION['user'])) {
                         <?php }?>
                     </i></a>
             </li>
+            <?php if(isset($_SESSION['user']) && $_SESSION['user']['type'] == 'admin'){?>
+            <li class="li_admin"><a href="admin/"><button class="btn_admin">Admin</button></a></li>
+            <?php } ?>
         </ul>
 
     </header>

@@ -1,5 +1,11 @@
-<?php include "header.php";
-$query = "SELECT * FROM orders WHERE user_id = {$_SESSION['user']['id']}";
+<?php  include "header.php";
+$query = "SELECT * FROM orders WHERE user_id = ";
+if(isset($_GET['id'])){
+    $query = $query.$_GET['id'];
+     }else{
+        $query = $query.$_SESSION['user']['id'];
+     };
+// echo $query;exit;
 $database = new Database();
 $orders = $database->query($query);
 $database->close();
@@ -20,15 +26,22 @@ $database->close();
             <th>Date</th>
             <th>Action</th>
         </tr>
-        <?php foreach($orders as $index => $order): ?>
+        <?php if (!isset($orders) || empty($orders)){?>
+        <tr class="trdEmpty">
+            <td>
+                <p><b><i><?='You have not any orders.please go back and purchase any books. Thanks:)';?></i></b></p>
+            </td>
+        </tr>
+        <?php } else {
+        foreach($orders as $index => $order): ?>
         <tr class="trd">
-            <td><?= $index + 1 ?></td>
+            <td style="color: red;"><b><?= $index + 1 ?></b></td>
             <td><?= $order['quantity'] ?></td>
             <td align="center"><?= $order['total_amount'] ?></td>
             <td align="right"><?= $order['date'] ?></td>
             <td align="right"><a href="order_items.php?id=<?= $order['id'] ?>" class="order_detail">Detail</a></td>
         </tr>
-        <?php endforeach ?>
+        <?php endforeach;}?>
     </table>
 </div>
 <?php include "footer.php" ?>

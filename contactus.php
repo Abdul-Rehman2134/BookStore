@@ -14,10 +14,9 @@
         </a>
 
         <a class="input1">
-            <button class="icone1" type=""><i class="fas fa-envelope"></i></button>
+            <button class="icone1" type=""><i class="fas fa-at"></i></button>
             <input class="um" type="email" placeholder="Email">
         </a>
-
 
         <input class="ms" type="text" placeholder="Message"><br>
         <button class="Sendmessage success1">Send message</button>

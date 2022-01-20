@@ -64,7 +64,7 @@ $database->close();
         ?>
         <div class="card">
             <a href="book-details.php?id=<?= $book['id'] ?>">
-                <img src="<?= $book['image'] ?>" alt="Sample photo">
+                <img src="assets/image/<?= $book['image'] ?>" alt="Sample photo">
             
                     <h5><?= substr($book['name'], 0, 20) . " ... "  ?></h5>
                     <p>Author__<?= $book['author'] ?></p>

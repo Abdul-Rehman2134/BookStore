@@ -491,3 +491,23 @@
       width: 50%;
       text-align: center;
   }
+  
+  .li_admin {
+      position: relative;
+      left: 300px;
+      bottom: 30px;
+  }
+  
+  .btn_admin {
+      padding: 12px 20px 12px 20px;
+      border-radius: 10px;
+      border: 2px solid #3EB6A6;
+      cursor: pointer;
+  }
+  
+  .btn_admin:hover {
+      border: 2px solid #3EB6A6;
+      background-color: #00A38D;
+      transition: .5s;
+      color: white;
+  }
